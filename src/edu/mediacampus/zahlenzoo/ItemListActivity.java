@@ -14,11 +14,11 @@ import edu.mediacampus.zahlenzoo.library.AufgabenGenerator;
  * lead to a {@link ItemDetailActivity} representing
  * item details. On tablets, the activity presents the list of items and
  * item details side-by-side using two vertical panes.
- * <p>
+ * <p/>
  * The activity makes heavy use of fragments. The list of items is a
  * {@link ItemListFragment} and the item details
  * (if present) is a {@link ItemDetailFragment}.
- * <p>
+ * <p/>
  * This activity also implements the required
  * {@link ItemListFragment.Callbacks} interface
  * to listen for item selections.
@@ -38,8 +38,8 @@ public class ItemListActivity extends FragmentActivity implements ItemListFragme
         setContentView(R.layout.activity_item_list);
 
         //Log Ausgabe
-        AufgabenGenerator aufgaben = new AufgabenGenerator();
-        aufgaben.berechneStufe1();
+        AufgabenGenerator aufgaben = new AufgabenGenerator(25);
+        aufgaben.rechnenPlus();
 
         if (findViewById(R.id.item_detail_container) != null) {
             // The detail container view will be present only in the
@@ -54,7 +54,7 @@ public class ItemListActivity extends FragmentActivity implements ItemListFragme
                     .findFragmentById(R.id.item_list))
                     .setActivateOnItemClick(true);
         }
-        
+
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         // TODO: If exposing deep links into your app, handle intents here.
@@ -67,8 +67,6 @@ public class ItemListActivity extends FragmentActivity implements ItemListFragme
     @Override
     public void onItemSelected(String id) {
         if (mTwoPane) {
-
-
 
 
             // In two-pane mode, show the detail view in this activity by
