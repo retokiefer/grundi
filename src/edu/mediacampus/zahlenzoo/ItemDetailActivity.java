@@ -19,11 +19,14 @@ public class ItemDetailActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_detail);
 
         // Show the Up button in the action bar.
         getActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
         // savedInstanceState is non-null when there is fragment state
         // saved from previous configurations of this activity

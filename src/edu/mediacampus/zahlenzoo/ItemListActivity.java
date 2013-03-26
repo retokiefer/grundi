@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import edu.mediacampus.zahlenzoo.library.AufgabenGenerator;
 
 
 /**
@@ -32,8 +33,13 @@ public class ItemListActivity extends FragmentActivity implements ItemListFragme
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_list);
+
+        //Log Ausgabe
+        AufgabenGenerator aufgaben = new AufgabenGenerator();
+        aufgaben.berechneStufe1();
 
         if (findViewById(R.id.item_detail_container) != null) {
             // The detail container view will be present only in the
@@ -61,6 +67,10 @@ public class ItemListActivity extends FragmentActivity implements ItemListFragme
     @Override
     public void onItemSelected(String id) {
         if (mTwoPane) {
+
+
+
+
             // In two-pane mode, show the detail view in this activity by
             // adding or replacing the detail fragment using a
             // fragment transaction.
