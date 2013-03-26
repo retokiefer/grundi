@@ -12,9 +12,10 @@ import java.util.Random;
 public class AufgabenGenerator {
 
     public ArrayList<Aufgabe> aufgabenSpeicher = new ArrayList<Aufgabe>();
+    public ArrayList<Aufgabe> alleAufgabenSpeicher = new ArrayList<Aufgabe>();
     public int zahlenraum = 10;
     public int schwierigkeit = 1;
-    public int anzahl = 9;
+    public int anzahl = 8;
 
     public AufgabenGenerator() {
         rechnenPlus();
@@ -22,7 +23,15 @@ public class AufgabenGenerator {
 
     public AufgabenGenerator(int zahlenraum) {
         this.zahlenraum = zahlenraum;
+        aufgabenSpeicher.clear();
+        rechnenMal();
+        aufgabenSpeicher.clear();
+        rechnenMinus();
+        aufgabenSpeicher.clear();
         rechnenPlus();
+        Log.v("ERGEBNIS >>>", String.valueOf(alleAufgabenSpeicher.size()));
+
+
     }
 
     public void rechnenPlus() {
@@ -38,6 +47,7 @@ public class AufgabenGenerator {
             aufgabe.setErgebnis(ergebnis);
             if (zahl1 != 0 && zahl2 < ergebnis && ergebnis > zahlenraum - 10 && ergebnis <= zahlenraum) {
                 aufgabenSpeicher.add(aufgabe);
+                alleAufgabenSpeicher.add(aufgabe);
             }
             //TODO: Dubletten rausfiltern
         }
@@ -50,4 +60,60 @@ public class AufgabenGenerator {
         }
 
     }
+
+    public void rechnenMinus() {
+        do {
+            Random random = new Random();
+            int zahl1 = random.nextInt(zahlenraum) + 1;
+            int zahl2 = random.nextInt(zahl1) + 1;
+
+            Aufgabe aufgabe = new Aufgabe();
+            aufgabe.setZahl1(zahl1);
+            aufgabe.setZahl2(zahl2);
+            aufgabe.setOperator('-');
+            aufgabe.setErgebnis(zahl1 - zahl2);
+            if (aufgabe.getErgebnis() > 0) {
+                aufgabenSpeicher.add(aufgabe);
+                alleAufgabenSpeicher.add(aufgabe);
+            }
+            //TODO: Dubletten rausfiltern
+        }
+
+        while (aufgabenSpeicher.size() <= anzahl);
+
+        for (Aufgabe a : aufgabenSpeicher) {
+            Log.i(">>> Ergebnis", a.toString());
+
+        }
+
+    }
+
+    public void rechnenMal() {
+        do {
+            Random random = new Random();
+            int zahl1 = random.nextInt(zahlenraum) + 1;
+            int zahl2 = random.nextInt(zahl1) + 1;
+
+            Aufgabe aufgabe = new Aufgabe();
+            aufgabe.setZahl1(zahl1);
+            aufgabe.setZahl2(zahl2);
+            aufgabe.setOperator('*');
+            aufgabe.setErgebnis(zahl1 * zahl2);
+            if (aufgabe.getErgebnis() < zahlenraum) {
+                aufgabenSpeicher.add(aufgabe);
+                alleAufgabenSpeicher.add(aufgabe);
+            }
+            //TODO: Dubletten rausfiltern
+        }
+
+        while (aufgabenSpeicher.size() <= anzahl);
+
+        for (Aufgabe a : aufgabenSpeicher) {
+            Log.i(">>> Ergebnis", a.toString());
+
+        }
+
+    }
+
+
 }

@@ -38,7 +38,7 @@ public class ItemListActivity extends FragmentActivity implements ItemListFragme
         setContentView(R.layout.activity_item_list);
 
         //Log Ausgabe
-        AufgabenGenerator aufgaben = new AufgabenGenerator(25);
+        AufgabenGenerator aufgaben = new AufgabenGenerator(100);
         aufgaben.rechnenPlus();
 
         if (findViewById(R.id.item_detail_container) != null) {
