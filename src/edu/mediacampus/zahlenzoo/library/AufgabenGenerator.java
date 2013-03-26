@@ -13,6 +13,8 @@ public class AufgabenGenerator {
 
     public ArrayList<Aufgabe> aufgabenSpeicher = new ArrayList<Aufgabe>();
     public ArrayList<Aufgabe> alleAufgabenSpeicher = new ArrayList<Aufgabe>();
+    public ArrayList<Aufgabe> auswahlAufgabenSpeicher = new ArrayList<Aufgabe>();
+
     public int zahlenraum = 10;
     public int schwierigkeit = 1;
     public int anzahl = 8;
@@ -31,6 +33,18 @@ public class AufgabenGenerator {
         rechnenPlus();
         Log.v("ERGEBNIS >>>", String.valueOf(alleAufgabenSpeicher.size()));
 
+        for (int i = 0; i <= 8; i++) {
+            Random random = new Random();
+            int pos = random.nextInt(27);
+
+            auswahlAufgabenSpeicher.add(alleAufgabenSpeicher.get(pos));
+        }
+
+        for (Aufgabe a : auswahlAufgabenSpeicher) {
+            Log.i(">>> METAErgebnis", a.toString());
+
+        }
+        Log.v("ERGEBNIS >>>", String.valueOf(auswahlAufgabenSpeicher.size()));
 
     }
 
