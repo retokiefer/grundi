@@ -39,7 +39,7 @@ public class ItemListActivity extends FragmentActivity implements ItemListFragme
 
         //Log Ausgabe
         AufgabenGenerator aufgaben = new AufgabenGenerator(100);
-        aufgaben.rechnenPlus();
+        //aufgaben.rechnenPlus();
 
         if (findViewById(R.id.item_detail_container) != null) {
             // The detail container view will be present only in the
