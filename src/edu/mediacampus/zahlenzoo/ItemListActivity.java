@@ -46,7 +46,7 @@ public class ItemListActivity extends FragmentActivity implements ItemListFragme
 
         AufgabenGenerator ag = new AufgabenGenerator(50);
 
-        aufgaben = ag.rechnenMeta();
+        aufgaben = ag.rechnenGeteilt();
 
         for (Aufgabe a : aufgaben) {
             Log.i(">>> Ergebnis", a.toString());
