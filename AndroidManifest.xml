@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.mediacampus.zahlenzoo"
-    android:versionCode="1"
-    android:versionName="1.0" >
+          package="edu.mediacampus.zahlenzoo"
+          android:versionCode="1"
+          android:versionName="1.0">
 
     <uses-sdk
-        android:minSdkVersion="15"
-        android:targetSdkVersion="17" />
+            android:minSdkVersion="15"
+            android:targetSdkVersion="17"/>
 
     <application
-        android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:debuggable="true">
+            android:allowBackup="true"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+            android:debuggable="true">
         <activity
-            android:name="edu.mediacampus.zahlenzoo.ItemListActivity"
-            android:label="@string/app_name" >
+                android:name="edu.mediacampus.zahlenzoo.ItemListActivity"
+                android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
-            android:name="edu.mediacampus.zahlenzoo.ItemDetailActivity"
-            android:label="@string/title_item_detail"
-            android:parentActivityName=".ItemListActivity" >
+                android:name="edu.mediacampus.zahlenzoo.ItemDetailActivity"
+                android:label="@string/title_item_detail"
+                android:parentActivityName=".ItemListActivity">
             <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ItemListActivity" />
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".ItemListActivity"/>
         </activity>
     </application>
 
