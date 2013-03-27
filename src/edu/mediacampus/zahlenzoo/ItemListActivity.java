@@ -4,7 +4,11 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
+import edu.mediacampus.zahlenzoo.library.Aufgabe;
 import edu.mediacampus.zahlenzoo.library.AufgabenGenerator;
+
+import java.util.ArrayList;
 
 
 /**
@@ -38,7 +42,17 @@ public class ItemListActivity extends FragmentActivity implements ItemListFragme
         setContentView(R.layout.activity_item_list);
 
         //Log Ausgabe
-        AufgabenGenerator aufgaben = new AufgabenGenerator(100);
+        ArrayList<Aufgabe> aufgaben;
+
+        AufgabenGenerator ag = new AufgabenGenerator(50);
+
+        aufgaben = ag.rechnenMeta();
+
+        for (Aufgabe a : aufgaben) {
+            Log.i(">>> Ergebnis", a.toString());
+        }
+
+
         //aufgaben.rechnenPlus();
 
         if (findViewById(R.id.item_detail_container) != null) {
