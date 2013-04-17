@@ -23,6 +23,30 @@ public class Aufgabe {
         return result;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+
+        Aufgabe aufgabe;
+
+        if (obj instanceof Aufgabe) {
+            aufgabe = (Aufgabe) obj;
+        } else {
+            return false;
+        }
+
+
+        if (this.ergebnis != aufgabe.ergebnis) {
+            return false;
+        }
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return ergebnis;
+    }
+
     public int getErgebnis() {
         return ergebnis;
     }
@@ -54,4 +78,6 @@ public class Aufgabe {
     public void setOperator(char operator) {
         this.operator = operator;
     }
+
+
 }

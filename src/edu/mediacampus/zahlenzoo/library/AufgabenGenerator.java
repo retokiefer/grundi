@@ -12,9 +12,9 @@ import java.util.Random;
 
 public class AufgabenGenerator {
 
-    public ArrayList<Aufgabe> aufgabenSpeicher = new ArrayList<Aufgabe>();
-    public ArrayList<Aufgabe> alleAufgabenSpeicher = new ArrayList<Aufgabe>();
-    public ArrayList<Aufgabe> auswahlAufgabenSpeicher = new ArrayList<Aufgabe>();
+    public HashSet<Aufgabe> aufgabenSpeicher = new HashSet<Aufgabe>();
+    public HashSet<Aufgabe> alleAufgabenSpeicher = new HashSet<Aufgabe>();
+    public HashSet<Aufgabe> auswahlAufgabenSpeicher = new HashSet<Aufgabe>();
     public int zahlenraum = 10;
     public int schwierigkeit = 1;
     public int anzahl = 8;
@@ -24,7 +24,7 @@ public class AufgabenGenerator {
         this.zahlenraum = zahlenraum;
     }
 
-    public ArrayList<Aufgabe> rechnenPlus() {
+    public HashSet<Aufgabe> rechnenPlus() {
         do {
             Random random = new Random();
             int ergebnis = random.nextInt(zahlenraum) + 1;
@@ -39,9 +39,6 @@ public class AufgabenGenerator {
                 aufgabenSpeicher.add(aufgabe);
                 alleAufgabenSpeicher.add(aufgabe);
             }
-            //TODO: Dubletten rausfiltern
-
-            removeDuplicate();
         }
 
 
@@ -51,7 +48,7 @@ public class AufgabenGenerator {
 
     }
 
-    public ArrayList<Aufgabe> rechnenMinus() {
+    public HashSet<Aufgabe> rechnenMinus() {
 
         do {
             Random random = new Random();
@@ -67,7 +64,6 @@ public class AufgabenGenerator {
                 aufgabenSpeicher.add(aufgabe);
                 alleAufgabenSpeicher.add(aufgabe);
             }
-            //TODO: Dubletten rausfiltern
         }
 
         while (aufgabenSpeicher.size() <= anzahl);
@@ -76,7 +72,7 @@ public class AufgabenGenerator {
 
     }
 
-    public ArrayList<Aufgabe> rechnenMal() {
+    public HashSet<Aufgabe> rechnenMal() {
         do {
             Random random = new Random();
             int zahl1 = random.nextInt(zahlenraum) + 1;
@@ -100,7 +96,7 @@ public class AufgabenGenerator {
 
     }
 
-    public ArrayList<Aufgabe> rechnenGeteilt() {
+    public HashSet<Aufgabe> rechnenGeteilt() {
         do {
             Random random = new Random();
             int ergebnis = random.nextInt(zahlenraum) + 1;
@@ -115,7 +111,6 @@ public class AufgabenGenerator {
                 aufgabenSpeicher.add(aufgabe);
                 alleAufgabenSpeicher.add(aufgabe);
             }
-            //TODO: Dubletten rausfiltern
         }
 
         while (aufgabenSpeicher.size() <= anzahl);
@@ -124,7 +119,7 @@ public class AufgabenGenerator {
 
     }
 
-    public ArrayList<Aufgabe> rechnenMeta() {
+    /*public HashSet<Aufgabe> rechnenMeta() {
         this.zahlenraum = zahlenraum;
         aufgabenSpeicher.clear();
         rechnenMal();
@@ -143,13 +138,6 @@ public class AufgabenGenerator {
 
         return auswahlAufgabenSpeicher;
 
-    }
-
-    public void removeDuplicate() {
-        HashSet hs = new HashSet();
-        hs.addAll(aufgabenSpeicher);
-        aufgabenSpeicher.clear();
-        aufgabenSpeicher.addAll(hs);
-    }
+    }        */
 
 }

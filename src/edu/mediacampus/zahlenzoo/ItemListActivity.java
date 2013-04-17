@@ -9,6 +9,7 @@ import edu.mediacampus.zahlenzoo.library.Aufgabe;
 import edu.mediacampus.zahlenzoo.library.AufgabenGenerator;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 
 /**
@@ -42,11 +43,11 @@ public class ItemListActivity extends FragmentActivity implements ItemListFragme
         setContentView(R.layout.activity_item_list);
 
         //Log Ausgabe
-        ArrayList<Aufgabe> aufgaben;
+        HashSet<Aufgabe> aufgaben;
 
-        AufgabenGenerator ag = new AufgabenGenerator(50);
+        AufgabenGenerator ag = new AufgabenGenerator(10);
 
-        aufgaben = ag.rechnenGeteilt();
+        aufgaben = ag.rechnenMinus();
 
         for (Aufgabe a : aufgaben) {
             Log.i(">>> Ergebnis", a.toString());
