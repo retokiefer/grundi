@@ -1,5 +1,9 @@
 package edu.mediacampus.zahlenzoo.library;
 
+
+import android.util.Log;
+
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 
@@ -10,7 +14,7 @@ import java.util.Random;
 public class AufgabenGenerator {
 
     public HashSet<Aufgabe> aufgabenSpeicher = new HashSet<Aufgabe>();
-    public HashSet<Aufgabe> alleAufgabenSpeicher = new HashSet<Aufgabe>();
+    public ArrayList<Aufgabe> alleAufgabenSpeicher = new ArrayList<Aufgabe>();
     public HashSet<Aufgabe> auswahlAufgabenSpeicher = new HashSet<Aufgabe>();
     public int zahlenraum = 10;
     public int schwierigkeit = 1;
@@ -34,7 +38,6 @@ public class AufgabenGenerator {
             aufgabe.setErgebnis(ergebnis);
             if (zahl1 != 0 && zahl2 < ergebnis && ergebnis > zahlenraum - 10 && ergebnis <= zahlenraum) {
                 aufgabenSpeicher.add(aufgabe);
-                alleAufgabenSpeicher.add(aufgabe);
             }
         }
 
@@ -59,7 +62,6 @@ public class AufgabenGenerator {
             aufgabe.setErgebnis(zahl1 - zahl2);
             if (aufgabe.getErgebnis() > 0) {
                 aufgabenSpeicher.add(aufgabe);
-                alleAufgabenSpeicher.add(aufgabe);
             }
         }
 
@@ -82,7 +84,6 @@ public class AufgabenGenerator {
             aufgabe.setErgebnis(zahl1 * zahl2);
             if (aufgabe.getErgebnis() < zahlenraum) {
                 aufgabenSpeicher.add(aufgabe);
-                alleAufgabenSpeicher.add(aufgabe);
             }
             //TODO: Dubletten rausfiltern
         }
@@ -104,9 +105,8 @@ public class AufgabenGenerator {
             aufgabe.setZahl2(zahl2);
             aufgabe.setOperator('/');
             aufgabe.setErgebnis(ergebnis);
-            if (zahl2 != 0 && zahl1 > zahl2 && zahl1< zahlenraum && zahl2 < zahlenraum) {
+            if (zahl2 != 0 && zahl1 > zahl2 && zahl1 < zahlenraum && zahl2 < zahlenraum) {
                 aufgabenSpeicher.add(aufgabe);
-                alleAufgabenSpeicher.add(aufgabe);
             }
         }
 
@@ -116,25 +116,32 @@ public class AufgabenGenerator {
 
     }
 
-    /*public HashSet<Aufgabe> rechnenMeta() {
+    //TODO: Gleichmäßige Verteilung der Operanden gewährleisten
+    //TODO: => Neue Klasse: Ergebnisse vorschlagen und überprüfen
+
+    public HashSet<Aufgabe> rechnenMeta() {
         this.zahlenraum = zahlenraum;
         aufgabenSpeicher.clear();
         rechnenMal();
+        alleAufgabenSpeicher.addAll(aufgabenSpeicher);
         aufgabenSpeicher.clear();
         rechnenMinus();
+        alleAufgabenSpeicher.addAll(aufgabenSpeicher);
         aufgabenSpeicher.clear();
         rechnenPlus();
+        alleAufgabenSpeicher.addAll(aufgabenSpeicher);
         Log.v("ERGEBNIS >>>", String.valueOf(alleAufgabenSpeicher.size()));
 
-        for (int i = 0; i <= 8; i++) {
+        do {
             Random random = new Random();
-            int pos = random.nextInt(27);
+            int pos = random.nextInt(alleAufgabenSpeicher.size());
 
             auswahlAufgabenSpeicher.add(alleAufgabenSpeicher.get(pos));
         }
+        while (auswahlAufgabenSpeicher.size() <= anzahl);
 
         return auswahlAufgabenSpeicher;
 
-    }        */
+    }
 
 }
