@@ -36,7 +36,7 @@ public class AufgabenGenerator {
             aufgabe.setZahl2(zahl2);
             aufgabe.setOperator('+');
             aufgabe.setErgebnis(ergebnis);
-            if (zahl1 != 0 && zahl2 < ergebnis && ergebnis > zahlenraum - 10 && ergebnis <= zahlenraum) {
+            if (zahl1 != 0 && zahl2 < ergebnis && aufgabe.getErgebnis() > zahlenraum - 10 && ergebnis <= zahlenraum) {
                 aufgabenSpeicher.add(aufgabe);
             }
         }
@@ -60,7 +60,7 @@ public class AufgabenGenerator {
             aufgabe.setZahl2(zahl2);
             aufgabe.setOperator('-');
             aufgabe.setErgebnis(zahl1 - zahl2);
-            if (aufgabe.getErgebnis() > 0) {
+            if (aufgabe.getErgebnis() > 0 && aufgabe.getErgebnis() > zahlenraum - 10) {
                 aufgabenSpeicher.add(aufgabe);
             }
         }
@@ -82,32 +82,10 @@ public class AufgabenGenerator {
             aufgabe.setZahl2(zahl2);
             aufgabe.setOperator('*');
             aufgabe.setErgebnis(zahl1 * zahl2);
-            if (aufgabe.getErgebnis() < zahlenraum) {
+            if (aufgabe.getErgebnis() < zahlenraum && aufgabe.getErgebnis() > zahlenraum - 10) {
                 aufgabenSpeicher.add(aufgabe);
             }
             //TODO: Dubletten rausfiltern
-        }
-
-        while (aufgabenSpeicher.size() <= anzahl);
-
-        return aufgabenSpeicher;
-
-    }
-
-    public HashSet<Aufgabe> rechnenGeteilt() {
-        do {
-            Random random = new Random();
-            int ergebnis = random.nextInt(zahlenraum) + 1;
-            int zahl2 = random.nextInt(ergebnis) + 1;
-            int zahl1 = ergebnis * zahl2;
-            Aufgabe aufgabe = new Aufgabe();
-            aufgabe.setZahl1(zahl1);
-            aufgabe.setZahl2(zahl2);
-            aufgabe.setOperator('/');
-            aufgabe.setErgebnis(ergebnis);
-            if (zahl2 != 0 && zahl1 > zahl2 && zahl1 < zahlenraum && zahl2 < zahlenraum) {
-                aufgabenSpeicher.add(aufgabe);
-            }
         }
 
         while (aufgabenSpeicher.size() <= anzahl);

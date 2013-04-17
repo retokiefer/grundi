@@ -44,7 +44,7 @@ public class ItemListActivity extends FragmentActivity implements ItemListFragme
         //Log Ausgabe
         HashSet<Aufgabe> aufgaben;
 
-        AufgabenGenerator ag = new AufgabenGenerator(10);
+        AufgabenGenerator ag = new AufgabenGenerator(40);
 
         aufgaben = ag.rechnenMeta();
 
