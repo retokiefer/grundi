@@ -52,5 +52,26 @@ public class Engine {
         }
     }
 
+    /*TODO
+     *  Aufgaben prüfen
+     *  Spielstand
+     *  Scoreerhöhen
+     *  Externe Album-Klasse
+     *  Neue Nutzer anlegen
+     *
+     *
+     */
+
+    public Boolean pruefeLoesungsvorschlag(String aufgabe, String vorschlag) {
+
+        int pos = aufgabe.indexOf('=');
+        String ergebnis = aufgabe.substring(pos + 1, aufgabe.length());
+
+        if (ergebnis == vorschlag) {
+            return true;
+        }
+
+        return false;
+    }
 
 }
