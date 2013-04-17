@@ -11,7 +11,9 @@ import java.util.ArrayList;
  */
 public class Engine {
 
-    User user = new User();
+
+
+    User user = new User("","");
 
     /**
      * @return Arrayliste mit Spielständen
@@ -34,7 +36,7 @@ public class Engine {
      * @param operator
      * @param neueStufe
      */
-    public void setSpielstand(int operator, int neueStufe) {
+    public void levelBeenden(int operator, int neueStufe) {
         //1:+, 2:-, 3:*, 4:#
         switch (operator) {
             case 1:
@@ -50,17 +52,10 @@ public class Engine {
                 user.setDoneMeta(neueStufe);
                 break;
         }
+        user.addToScore(100);
+        //TODO User Speichern
     }
 
-    /*TODO
-     *  Aufgaben prüfen
-     *  Spielstand
-     *  Scoreerhöhen
-     *  Externe Album-Klasse
-     *  Neue Nutzer anlegen
-     *
-     *
-     */
 
     public Boolean pruefeLoesungsvorschlag(String aufgabe, String vorschlag) {
 
@@ -71,6 +66,8 @@ public class Engine {
             return true;
         }
 
+        user.addToScore(10);
+        //TODO User Speichern
         return false;
     }
 

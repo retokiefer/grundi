@@ -13,6 +13,12 @@ public class Album {
 
     private ArrayList<String> album = new ArrayList<String>();
 
+
+    public Album() {
+        //Hier das Album aus Dateinamen einlesen und aufbauen.
+    }
+
+
     public ArrayList<String> getAlbum() {
         return album;
     }
@@ -20,4 +26,5 @@ public class Album {
     public void setAlbum(ArrayList<String> album) {
         this.album = album;
     }
+
 }

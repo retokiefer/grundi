@@ -23,6 +23,11 @@ public class User {
     private int doneMal;
     private int doneMeta;
 
+    public User (String name, String icon) {
+        this.name = name;
+        this.icon = icon;
+    }
+
     public String getName() {
         return name;
     }
@@ -86,5 +91,9 @@ public class User {
 
     public void setIcon(String icon) {
         this.icon = icon;
+    }
+
+    public void addToScore(int punkte) {
+        this.score = this.score + punkte;
     }
 }

@@ -1,5 +1,7 @@
 package edu.mediacampus.zahlenzoo.library;
 
+import java.util.ArrayList;
+
 /**
  * Created with IntelliJ IDEA.
  * User: retokiefer
@@ -10,4 +12,22 @@ package edu.mediacampus.zahlenzoo.library;
  * User CRUD
  */
 public class Verwaltung {
+
+    public void neuerUser(String name, String icon) {
+        User user = new User(name, icon);
+    }
+
+    public void userLoeschen (String name) {
+        //
+    }
+
+    public ArrayList<User> zeigeUserListe() {
+
+        ArrayList<User> userListe = new ArrayList<User>();
+
+        //TODO: Aus Persistenz User auslesen
+
+        return userListe;
+    }
+
 }
