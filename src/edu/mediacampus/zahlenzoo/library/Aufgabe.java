@@ -34,6 +34,8 @@ public class Aufgabe {
             return false;
         }
 
+        //Weitere Prüfungen möglich...
+
         return true;
     }
 
