@@ -41,8 +41,8 @@ public class Aufgabe {
 
     @Override
     public int hashCode() {
-        int checksum = zahl1 + ergebnis;
-        return checksum;
+        int checksumme = zahl1 + ergebnis;      //Ausgabe wird nach checksum sortiert
+        return checksumme;
     }
 
     public int getErgebnis() {
