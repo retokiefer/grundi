@@ -8,7 +8,6 @@ import android.util.Log;
 import edu.mediacampus.zahlenzoo.library.Aufgabe;
 import edu.mediacampus.zahlenzoo.library.AufgabenGenerator;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 
 

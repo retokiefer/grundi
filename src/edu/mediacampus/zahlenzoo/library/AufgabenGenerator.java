@@ -1,8 +1,5 @@
 package edu.mediacampus.zahlenzoo.library;
 
-import android.util.Log;
-
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 

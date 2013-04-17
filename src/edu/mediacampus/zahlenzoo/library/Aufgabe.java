@@ -34,17 +34,13 @@ public class Aufgabe {
             return false;
         }
 
-
-        if (this.ergebnis != aufgabe.ergebnis) {
-            return false;
-        }
-
         return true;
     }
 
     @Override
     public int hashCode() {
-        return ergebnis;
+        int checksum = zahl1 + ergebnis;
+        return checksum;
     }
 
     public int getErgebnis() {
