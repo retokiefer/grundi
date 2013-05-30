@@ -1,4 +1,4 @@
-package edu.mediacampus.zahlenzoo.dummy;
+package edu.mediacampus.grundi.dummy;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package edu.mediacampus.zahlenzoo.library;
+package edu.mediacampus.grundi.library;
 
 import java.util.ArrayList;
 
@@ -23,7 +23,7 @@ public class User {
     private int doneMal;
     private int doneMeta;
 
-    public User (String name, String icon) {
+    public User(String name, String icon) {
         this.name = name;
         this.icon = icon;
     }

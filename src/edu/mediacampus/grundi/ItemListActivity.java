@@ -1,12 +1,12 @@
-package edu.mediacampus.zahlenzoo;
+package edu.mediacampus.grundi;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
-import edu.mediacampus.zahlenzoo.library.Aufgabe;
-import edu.mediacampus.zahlenzoo.library.AufgabenGenerator;
+import edu.mediacampus.grundi.library.Aufgabe;
+import edu.mediacampus.grundi.library.AufgabenGenerator;
 
 import java.util.HashSet;
 

@@ -1,4 +1,4 @@
-package edu.mediacampus.zahlenzoo.library;
+package edu.mediacampus.grundi.library;
 
 import java.util.ArrayList;
 
@@ -17,7 +17,7 @@ public class Verwaltung {
         User user = new User(name, icon);
     }
 
-    public void userLoeschen (String name) {
+    public void userLoeschen(String name) {
         //
     }
 

@@ -1,4 +1,4 @@
-package edu.mediacampus.zahlenzoo;
+package edu.mediacampus.grundi;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,14 +6,14 @@ import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import edu.mediacampus.zahlenzoo.dummy.DummyContent;
+import edu.mediacampus.grundi.dummy.DummyContent;
 
 /**
  * A list fragment representing a list of Items. This fragment
  * also supports tablet devices by allowing list items to be given an
  * 'activated' state upon selection. This helps indicate which item is
  * currently being viewed in a {@link ItemDetailFragment}.
- * <p>
+ * <p/>
  * Activities containing this fragment MUST implement the {@link Callbacks}
  * interface.
  */

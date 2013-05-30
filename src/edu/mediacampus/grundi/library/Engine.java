@@ -1,4 +1,4 @@
-package edu.mediacampus.zahlenzoo.library;
+package edu.mediacampus.grundi.library;
 
 import java.util.ArrayList;
 
@@ -12,8 +12,7 @@ import java.util.ArrayList;
 public class Engine {
 
 
-
-    User user = new User("","");
+    User user = new User("", "");
 
     /**
      * @return Arrayliste mit Spielständen
