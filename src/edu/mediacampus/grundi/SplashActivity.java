@@ -1,3 +1,5 @@
+package edu.mediacampus.grundi;
+
 import android.app.Activity;
 import android.os.Bundle;
 

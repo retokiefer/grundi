@@ -29,15 +29,17 @@
                 android:layout_width="160dip"
                 android:layout_height="wrap_content"
                 android:text="Neuer Spieler"
-                android:id="@+id/button"
-                android:layout_marginRight="64dp"/>
+                android:id="@+id/button1"
+                android:layout_marginRight="64dp"
+                android:onClick="selectPlayer"/>
 
             <Button
                 android:layout_width="160dip"
                 android:layout_height="wrap_content"
                 android:text="Neuer Spieler"
                 android:id="@+id/button2"
-                android:layout_marginLeft="64dp"/>
+                android:layout_marginLeft="64dp"
+                android:onClick="selectPlayer"/>
         </TableRow>
 
         <TableRow
@@ -50,14 +52,16 @@
                 android:layout_height="wrap_content"
                 android:text="Neuer Spieler"
                 android:id="@+id/button3"
-                android:layout_marginRight="64dp"/>
+                android:layout_marginRight="64dp"
+                android:onClick="selectPlayer"/>
 
             <Button
                 android:layout_width="160dip"
                 android:layout_height="wrap_content"
                 android:text="Neuer Spieler"
                 android:id="@+id/button4"
-                android:layout_marginLeft="64dp"/>
+                android:layout_marginLeft="64dp"
+                android:onClick="selectPlayer"/>
         </TableRow>
 
         <TableRow
@@ -70,14 +74,16 @@
                 android:layout_height="wrap_content"
                 android:text="Neuer Spieler"
                 android:id="@+id/button5"
-                android:layout_marginRight="64dp"/>
+                android:layout_marginRight="64dp"
+                android:onClick="selectPlayer"/>
 
             <Button
                 android:layout_width="160dip"
                 android:layout_height="wrap_content"
                 android:text="Neuer Spieler"
                 android:id="@+id/button6"
-                android:layout_marginLeft="64dp"/>
+                android:layout_marginLeft="64dp"
+                android:onClick="selectPlayer"/>
         </TableRow>
 
 
